@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Savings Calculator</title>
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src = "js/main-js.js"></script>  
+ </head>
+ <body>
+ <div id="description">
+ <h1>Savings Calculator</h1>
+ <p>This calculator is designed to help you estimate how much money you have left to contribute towards your savings each month.</p>
+ <p>Please enter the amounts for your monthly incoming and outgoing expenses. If some of the expenses aren't applicable to you, just leave them blank.</p>
+ </div>     
+     <div id="inputSection">
+       <div id="income">
+         <h3>Salary (after tax):</h3>
+           <p id="currency">&pound;</p>
+           <input id="salary" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+          <h3>Commission earned:</h3>
+           <p id="currency">&pound;</p>
+           <input id="commission" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+       </div>   
+       <div id="expenses">
+        <h3>Rent/Mortgage:</h3>
+           <p id="currency">&pound;</p>
+           <input id="rentMortgage" class="inputBox" type="text" placeholder="0.00" autocomplete="off">   
+        <h3>Bills:</h3>
+           <p id="currency">&pound;</p>
+           <input id="bills" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+        <h3>Insurance:</h3>
+           <p id="currency">&pound;</p>
+           <input id="insurance" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+        <h3>Groceries:</h3>
+           <p id="currency">&pound;</p>
+           <input id="groceries" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+        <h3>Commuting:</h3>
+           <p id="currency">&pound;</p>
+           <input id="commuting" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+        <h3>Leisure/Hobbies:</h3>
+           <p id="currency">&pound;</p>
+           <input id="leisureHobbies" class="inputBox" type="text" placeholder="0.00" autocomplete="off">
+           </div>                 
+       </div>
+       <div id="calculateSection">
+        <h2>Monthly budget after expenses:</h2>
+           <input type="button" id="button" value="Submit" onclick="calculate()">
+           <p id="currency2">&pound;</p>
+           <input id="total" type="text" placeholder="0.00" autocomplete="off">
+       </div>
+     <footer><a href="http://www.freepik.com">Background image designed by Waewkidja / Freepik</a></footer>
+ </body>
+</html>
