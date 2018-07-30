@@ -1,38 +1,49 @@
 $(document).ready(function () { 
+    
     calculate = function () {
-        var salaryAmount = parseFloat(document.getElementById('salary').value, 10);
-        if (isNaN(salaryAmount) === true) {
-            salaryAmount = 0;
+        
+        // Collects object arrays from ".income" sections
+        var getIncomeList = document.getElementsByClassName("income");
+        
+        // Empty array ready for income values to be added
+        var income = [];
+        
+        // Loop to add values from object arrays into var income
+        for (var i = 0; i < getIncomeList.length; i ++ ) {
+        // Pushes values to array
+            income.push($(getIncomeList[i]).val());
+        // Converts to int
+            income[i] = parseFloat(income[i], 10);
+        };
+        
+        // Adds together values from income array
+        addValues = function(items){
+            return items.reduce( function(a, b) {
+                return a + b;
+            });
         }
-        var commissionAmount = parseFloat(document.getElementById('commission').value, 10);
-        if (isNaN(commissionAmount) === true) {
-            commissionAmount = 0;
+      
+        var incomeTotal = addValues(income);
+        
+        // Collects object arrays from ".expenses" sections
+        var getExpensesList = document.getElementsByClassName("expenses");
+        
+        // Empty array ready for income values to be added
+        var expenses = [];
+        
+        // Loop to add values from object arrays into var income
+        for (var e = 0; e < getExpensesList.length; e ++) {
+            // Pushes values to array
+            expenses.push($(getExpensesList[e]).val());
+            // Converts to int
+            expenses[e] = parseFloat(expenses[e], 10);
         }
-        var rentMortgageAmount = parseFloat(document.getElementById('rentMortgage').value, 10);
-        if (isNaN(rentMortgageAmount) === true) {
-            rentMortgageAmount = 0;
-        }
-        var billsAmount = parseFloat(document.getElementById('bills').value, 10);
-        if (isNaN(billsAmount) === true) {
-            billsAmount = 0;
-        }
-        var insuranceAmount = parseFloat(document.getElementById('insurance').value, 10);
-        if (isNaN(insuranceAmount) === true) {
-            insuranceAmount = 0;
-        }
-        var groceriesAmount = parseFloat(document.getElementById('groceries').value, 10);
-        if (isNaN(groceriesAmount) === true) {
-            groceriesAmount = 0;
-        }
-        var commutingAmount = parseFloat(document.getElementById('commuting').value, 10);
-        if (isNaN(commutingAmount) === true) {
-            commutingAmount = 0;
-        }
-        var leisureHobbiesAmount = parseFloat(document.getElementById('leisureHobbies').value, 10);
-        if (isNaN(leisureHobbiesAmount) === true) {
-            leisureHobbiesAmount = 0;
-        }
-        document.getElementById('total').value = salaryAmount + commissionAmount - rentMortgageAmount - billsAmount - insuranceAmount - groceriesAmount - commutingAmount - leisureHobbiesAmount.toFixed(2);
+    
+        var expensesTotal = addValues(expenses);
+        
+        // Display total in browser
+        document.getElementById('total').value = incomeTotal - expensesTotal.toFixed(2);
+
     };
     
     $("#button").hover(function () {
