@@ -12,10 +12,14 @@ $(document).ready(function () {
         for (var i = 0; i < getIncomeList.length; i ++ ) {
         // Pushes values to array
             income.push($(getIncomeList[i]).val());
-        // Converts to int
-            income[i] = parseFloat(income[i], 10);
+        // Converts inputs to int
+            if (isNaN(income[i]) === true) {
+                income[i] = 0;
+            } else {
+                income[i] = parseFloat(income[i], 10);
+            }
         };
-        
+              
         // Adds together values from income array
         addValues = function(items){
             return items.reduce( function(a, b) {
@@ -33,10 +37,14 @@ $(document).ready(function () {
         
         // Loop to add values from object arrays into var income
         for (var e = 0; e < getExpensesList.length; e ++) {
-            // Pushes values to array
+        // Pushes values to array
             expenses.push($(getExpensesList[e]).val());
-            // Converts to int
-            expenses[e] = parseFloat(expenses[e], 10);
+        // Converts inputs to int
+            if (isNaN(expenses[e]) === true) {
+                expenses[e] = 0;
+            } else {
+                expenses[e] = parseFloat(expenses[e], 10);
+            }
         }
     
         var expensesTotal = addValues(expenses);
