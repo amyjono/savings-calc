@@ -78,3 +78,8 @@ footer {
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
 }
+.incomeErr,
+.expensesErr {
+    color: red;
+    margin: 0;
+}
