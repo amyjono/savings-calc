@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    calculate = function () {
+    addOnChange = function () {
 
         // Object arrays from ".income" sections
         var getIncomeList = $(".income");
@@ -15,7 +15,7 @@ $(document).ready(function () {
         for (var i = 0; i < getIncomeList.length; i++) {
             // Pushes values to income array
             income.push($(getIncomeList[i]).val());
-    
+
             if (isNaN(income[i])) {
                 // Error message for isNaN entries
                 incomeMsg[i].innerHTML = "Please enter a valid number!";
@@ -71,10 +71,19 @@ $(document).ready(function () {
 
         var expensesTotal = addValues(expenses);
 
-        // Display total in browser
-
         var total = incomeTotal - expensesTotal.toFixed(2);
+
         document.getElementById('total').value = total;
+
+        calculate = function () {
+
+            document.getElementById('total').value = total;
+
+            // Decimal point gets lost here
+
+            $('#total').animateNumber({ number: 0 + total });
+
+        };
 
     };
 

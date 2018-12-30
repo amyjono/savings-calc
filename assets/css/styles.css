@@ -1,3 +1,4 @@
+/* Base */
 body {    
     margin: 0 !important;
     padding: 0 !important;
@@ -14,6 +15,8 @@ a {
 h1 {
     margin: 0;
 }
+
+/* content */
 
 #income h2:after {
     content: '';
@@ -37,9 +40,20 @@ h1 {
     color: #ffffff;
 }
 
-#calculateSection {
-    margin-top: 1%;
+#inputSection {
+    padding: 20px;
 }
+    #inputSection h3 {
+        margin: 25px 0;
+    }
+    /* margin needed for warning
+    #inputSection h3 {
+        margin: 25px 0 6px 0;
+    }*/
+    #inputSection p {
+        font-size: 14px;
+        display: inline-block;
+    }
 
 #income,
 #expenses {
@@ -66,10 +80,14 @@ input {
         outline: none;
     }
 
+#calculateSection {
+    padding: 20px 20px 40px 20px;
+    background-color: #c1d9ff;
+}
 
 #button {
     display: inline-block;
-    margin-left: 15px;
+    margin-top: 65px;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -81,10 +99,18 @@ input {
         background-color: #192868;
         transition: 0.3s all;
     }
-#currency2 {
+
+.currency2 {
    display: inline-block;
-   margin-left: 40px;
+   margin-left: 10px;
 }
+
+#totalContainer {
+    background-color: #ffffff;
+    width: 200px;
+    border: 1px solid #999999;
+}
+
 #total {
     display: inline-block;
 }
@@ -95,8 +121,17 @@ footer {
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
 }
+
 .incomeErr,
 .expensesErr {
     color: red;
     margin: 0;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    #button {
+        margin-top: 20px;
+    }
 }

@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/grid12.css">
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -18,86 +20,91 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div id="inputSection">
-                <div id="income">
-                    <h2>Income</h2>
-                    <div class="col-md-4">
-                    <h3>Salary (after tax):</h3>
-                    <p class="incomeErr"></p>
-                    <p class="currency">&pound;</p>
-                    <input id="salary" class="income" type="text" placeholder="0.00" autocomplete="off">
-                    </div>
-                    <div class="col-md-4">
-                    <h3>Commission</h3>
-                    <p class="incomeErr"></p>
-                    <p class="currency">&pound;</p>
-                    <input id="commission" class="income" type="text" placeholder="0.00" autocomplete="off">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div id="expenses">
+    <div id="inputSection">
+        <div class="container">
             <div class="row">
-                <h2>Expenses</h2>
-                <div class="col col-lg-4 col-sm-6">
-                <h3>Rent/Mortgage:</h3>
-                <p class="expensesErr"></p>
-                <p class="currency">&pound;</p>
-                <input id="rentMortgage" class="expenses" type="text" placeholder="0.00" autocomplete="off">
-                </div>
-                <div class="col col-lg-4 col-sm-6">
-                <h3>Utility Bills:</h3>
-                <p class="expensesErr"></p>
-                <p class="currency">&pound;</p>
-                <input id="bills" class="expenses" type="text" placeholder="0.00" autocomplete="off">
-                </div>
-                <div class="col col-lg-4 col-sm-6">
-                <h3>Insurance:</h3>
-                <p class="expensesErr"></p>
-                <p class="currency">&pound;</p>
-                <input id="insurance" class="expenses" type="text" placeholder="0.00" autocomplete="off">
-                </div>
-                <div class="col col-lg-4 col-sm-6">
-                <h3>Groceries:</h3>
-                <p class="expensesErr"></p>
-                <p class="currency">&pound;</p>
-                <input id="groceries" class="expenses" type="text" placeholder="0.00" autocomplete="off">
-                </div>
-                <div class="col col-lg-4 col-sm-6">
-                <h3>Commuting:</h3>
-                <p class="expensesErr"></p>
-                <p class="currency">&pound;</p>
-                <input id="commuting" class="expenses" type="text" placeholder="0.00" autocomplete="off">
-                </div>
-                <div class="col col-lg-4 col-sm-6">
-                <h3>Leisure/Hobbies:</h3>
-                <p class="expensesErr"></p>
-                <p class="currency">&pound;</p>
-                <input id="leisureHobbies" class="expenses" type="text" placeholder="0.00" autocomplete="off">
+             
+                    <div id="income">
+                        <h2>Monthly Income</h2>
+                        <div class="col col-lg-4 col-sm-6">
+                        <h3>Salary (after tax):</h3>
+                        <p class="incomeErr"></p>
+                        <p class="currency">&pound;</p>
+                        <input id="salary" class="income" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                        </div>
+                        <div class="col col-lg-4 col-sm-6">
+                        <h3>Commission</h3>
+                        <p class="incomeErr"></p>
+                        <p class="currency">&pound;</p>
+                        <input id="commission" class="income" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div id="expenses">
+                <div class="row">
+                    <h2>Monthly Expenses</h2>
+                    <div class="col col-lg-4 col-sm-6">
+                    <h3>Rent/Mortgage:</h3>
+                    <p class="expensesErr"></p>
+                    <p class="currency">&pound;</p>
+                    <input id="rentMortgage" class="expenses" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                    </div>
+                    <div class="col col-lg-4 col-sm-6">
+                    <h3>Utility Bills:</h3>
+                    <p class="expensesErr"></p>
+                    <p class="currency">&pound;</p>
+                    <input id="bills" class="expenses" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                    </div>
+                    <div class="col col-lg-4 col-sm-6">
+                    <h3>Insurance:</h3>
+                    <p class="expensesErr"></p>
+                    <p class="currency">&pound;</p>
+                    <input id="insurance" class="expenses" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                    </div>
+                    <div class="col col-lg-4 col-sm-6">
+                    <h3>Groceries:</h3>
+                    <p class="expensesErr"></p>
+                    <p class="currency">&pound;</p>
+                    <input id="groceries" class="expenses" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                    </div>
+                    <div class="col col-lg-4 col-sm-6">
+                    <h3>Commuting:</h3>
+                    <p class="expensesErr"></p>
+                    <p class="currency">&pound;</p>
+                    <input id="commuting" class="expenses" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                    </div>
+                    <div class="col col-lg-4 col-sm-6">
+                    <h3>Leisure/Hobbies:</h3>
+                    <p class="expensesErr"></p>
+                    <p class="currency">&pound;</p>
+                    <input id="leisureHobbies" class="expenses" onChange="addOnChange()" type="text" placeholder="0.00" autocomplete="off">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div id="calculateSection">
-                <h3>Monthly budget after expenses:</h3>
-                <div class="col-md-2 col-sm-4 col-xs-12">
-                <input type="button" id="button" value="Submit" onclick="calculate()">
+    <div id="calculateSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2-offset-1 col-sm-4 col-xs-12">
+                    <h3>Monthly budget after expenses:</h3>
+                    <div id="totalContainer">
+                        <p class="currency2">&pound;</p>
+                        <div id="total"></div>
+                    </div>   
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
-                <p id="currency2">&pound;</p>
-                <input id="total" type="text" placeholder="0.00" autocomplete="off">
+                    <input type="button" id="button" value="Calculate Budget" onclick="calculate()">
                 </div>
             </div>
         </div>
     </div>
+</div>
+<script src="assets/js/main-js.js"></script>
+<script src="assets/js/jquery.animateNumber.js"></script>
 </body>
 <footer></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script src="assets/js/main-js.js"></script>
 </html>
